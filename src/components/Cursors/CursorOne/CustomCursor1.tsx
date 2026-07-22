@@ -1,14 +1,13 @@
 import { useEffect, useState } from 'react';
-import '../../styles/CustomCursor1.css';
+import './CustomCursor1.css';
 
-
-interface CustomCursorProps {
+export interface CustomCursorProps {
   text?: string;
   spinDuration?: number;
 }
 
 export const CustomCursor: React.FC<CustomCursorProps> = ({
-  text = '• DISEÑO • FULLSTACK • DEVELOPER ', // Valor por defecto
+  text = '• DISEÑO • FULLSTACK • DEVELOPER ',
   spinDuration = 12,
 }) => {
   const [position, setPosition] = useState({ x: -100, y: -100 });
@@ -17,7 +16,7 @@ export const CustomCursor: React.FC<CustomCursorProps> = ({
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
       setPosition({ x: e.clientX, y: e.clientY });
-      if (!isVisible) setIsVisible(true);
+      setIsVisible(true);
     };
 
     const handleMouseLeave = () => {
@@ -31,7 +30,7 @@ export const CustomCursor: React.FC<CustomCursorProps> = ({
       window.removeEventListener('mousemove', handleMouseMove);
       document.removeEventListener('mouseleave', handleMouseLeave);
     };
-  }, [isVisible]);
+  }, []); 
 
   return (
     <div
@@ -53,7 +52,6 @@ export const CustomCursor: React.FC<CustomCursorProps> = ({
             fill="none"
           />
           <text className="custom-cursor-text">
-            {/* Renderizamos la prop dinámicamente */}
             <textPath href="#circlePath">{text}</textPath>
           </text>
         </svg>

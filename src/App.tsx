@@ -1,4 +1,4 @@
-import CustomCursor1 from './components/Cursors/CustomCursor1';
+import CustomCursor1 from './components/Cursors/CursorOne/CustomCursor1';
 
 
 export const App = () => {
