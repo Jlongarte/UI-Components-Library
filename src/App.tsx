@@ -1,10 +1,17 @@
-import CustomCursor1 from './components/Cursors/CursorOne/CustomCursor1';
 
+import NavbarOne from './components/Navbars/NavbarOne/NavbarOne';
 
 export const App = () => {
   return (
-    <main >
-      <CustomCursor1 text="• DEVELOPER • FRONTend • REACT • " spinDuration={8} />
+    <main
+      style={{
+        minHeight: '100vh',
+        backgroundColor: '#0c0d0e',
+        backgroundImage: 'radial-gradient(circle at 50% 20%, #22262a 0%, #0c0d0e 80%)',
+      }}
+    >
+      
+      <NavbarOne />
     </main>
   );
 };
